@@ -18,10 +18,9 @@ MainWindow::MainWindow(QWidget *parent)
     if (!myGnssDevice->open())
     {
         gnssdevice = false;
-        QString stemp = "Cannot open USB2ILS device: ";
+        QString stemp = "Cannot open GNSS USB device: ";
         stemp.append(USBGNSSDEVICE);
         stemp.append(".\n");
-        stemp.append("SOXNav will run but cannot generate ILS signals.");
         gnssMsgBox.setText(stemp);
         gnssMsgBox.exec();
     }
