@@ -18,9 +18,9 @@ MainWindow::MainWindow(QWidget *parent)
     if (!myGnssDevice->open())
     {
         gnssdevice = false;
-        QString stemp = "Cannot open GNSS USB device: ";
+        QString stemp = "Cannot open GNSS USB device ";
         stemp.append(USBGNSSDEVICE);
-        stemp.append(".\n");
+        stemp.append("\n");
         gnssMsgBox.setText(stemp);
         gnssMsgBox.exec();
     }
