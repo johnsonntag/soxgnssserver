@@ -30,9 +30,9 @@ Aircraft::Aircraft(QObject *parent)
     qlonr.clear();
     sumrocmps = 0.0;
     sumgsmps = 0.0;
-    nrocmean = 20; // we average ROC over 10 updates nominally 1 sec
+    nrocmean = 10; // we average ROC over 10 updates nominally 1 sec
     ngsmean = 10;  // we average groundspeed over 10 updates
-    npos = 20;  // We compute track angle across this many position updates
+    npos = 10;  // We compute track angle across this many position updates
 
 }
 
