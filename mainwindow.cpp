@@ -288,6 +288,7 @@ void MainWindow::sendMessage()
 
 void MainWindow::updateDateTime()
 {
+    double dtemp;
     QString stemp1;
     QString stemp2;
 
@@ -304,9 +305,12 @@ void MainWindow::updateDateTime()
     labtime->setText(stemp2);
 
     // Position and velocity components
-    stemp1 = QString("%1").arg(myplane->getLatd(),12,'f',8);
+    stemp1 = QString("%1").arg(myplane->getLatd(),12,'f',7);
     lablat->setText(stemp1);
-    stemp1 = QString("%1").arg(myplane->getLond(),13,'f',8);
+    dtemp = myplane->getLond();
+    while (dtemp>180.0) dtemp -= 360.0;
+    while (dtemp<-180.0) dtemp += 360.0;
+    stemp1 = QString("%1").arg(dtemp,13,'f',7);
     lablon->setText(stemp1);
     stemp1 = QString("%1").arg(myplane->getHgpsft(),7,'f',2);
     labht->setText(stemp1);
